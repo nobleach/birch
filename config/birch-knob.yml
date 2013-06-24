@@ -1,0 +1,7 @@
+application:
+  root: F:\Websites\birch
+environment:
+  RAILS_ENV: production
+web:
+  context: /birch
+  session-timeout: 12 h

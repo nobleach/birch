@@ -1,0 +1,1239 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"url",
+				"url_string"
+			],
+			[
+				"reques",
+				"requestor_phone"
+			],
+			[
+				"inci",
+				"incident_id"
+			],
+			[
+				"sen",
+				"send_confirmation"
+			],
+			[
+				"lat",
+				"lat_array"
+			],
+			[
+				"ig_dat",
+				"ig_date_no_dashes"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"roun",
+				"roundNumber"
+			],
+			[
+				"center",
+				"center_lng"
+			],
+			[
+				"select",
+				"select_html"
+			],
+			[
+				"selec",
+				"select_html"
+			],
+			[
+				"incident",
+				"incident_name"
+			],
+			[
+				"per",
+				"percentContainment"
+			],
+			[
+				"relat",
+				"relative"
+			],
+			[
+				"pass",
+				"password-error"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"email",
+				"email_address"
+			],
+			[
+				"reque",
+				"requeustor_phone"
+			],
+			[
+				"to_s",
+				"to_s"
+			],
+			[
+				"ex",
+				"expected_containment_date"
+			],
+			[
+				"incid",
+				"incident_name"
+			],
+			[
+				"marker1",
+				"marker1_lat"
+			],
+			[
+				"get",
+				"getPosition"
+			],
+			[
+				"M",
+				"Marker"
+			],
+			[
+				"place",
+				"placeMarker"
+			],
+			[
+				"Map",
+				"MapTypeId"
+			],
+			[
+				"map",
+				"mapTypeId"
+			],
+			[
+				"Lat",
+				"LatLng"
+			],
+			[
+				"center_",
+				"center_lng"
+			],
+			[
+				"array_key",
+				"array_key_exists"
+			],
+			[
+				"font-",
+				"font-weight"
+			],
+			[
+				"list",
+				"list	list-style: type position image"
+			],
+			[
+				"verti",
+				"vertical-align"
+			],
+			[
+				"desired",
+				"desired_delivery_date"
+			],
+			[
+				"ba",
+				"background	background-color: transparent"
+			],
+			[
+				"Imag",
+				"ImageryRequest"
+			],
+			[
+				"tile",
+				"tile_feedback"
+			],
+			[
+				"function",
+				"function"
+			],
+			[
+				"imagery",
+				"imagery_requests"
+			],
+			[
+				"ima",
+				"imagery_requests"
+			],
+			[
+				"redir",
+				"redirect_to"
+			],
+			[
+				"des",
+				"destroy"
+			],
+			[
+				"dest",
+				"destroy"
+			],
+			[
+				"redire",
+				"redirect_to"
+			],
+			[
+				"imag",
+				"imagery_requests"
+			],
+			[
+				"confir",
+				"confirm-delete"
+			],
+			[
+				"def",
+				"def	def … end"
+			],
+			[
+				"salte",
+				"saltedpass"
+			],
+			[
+				"new",
+				"new"
+			],
+			[
+				"span",
+				"span6"
+			],
+			[
+				"link",
+				"link_to"
+			],
+			[
+				"if",
+				"if	if condition"
+			],
+			[
+				"resou",
+				"resources"
+			],
+			[
+				"contro",
+				"controller	controller"
+			],
+			[
+				"con",
+				"controller	controller"
+			],
+			[
+				"Admini",
+				"Administration"
+			],
+			[
+				"click",
+				".click: click"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"di",
+				"dialog"
+			],
+			[
+				"lo",
+				"long"
+			],
+			[
+				"arra",
+				"array_product"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/controllers/requests_controller.rb",
+			"settings":
+			{
+				"buffer_size": 7233,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/requests/list.html.erb",
+			"settings":
+			{
+				"buffer_size": 2968,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/export.rb",
+			"settings":
+			{
+				"buffer_size": 439,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/javascripts/application.js",
+			"settings":
+			{
+				"buffer_size": 4493,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gemfile",
+			"settings":
+			{
+				"buffer_size": 996,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/requests/_form.html.erb",
+			"settings":
+			{
+				"buffer_size": 10334,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"set",
+				"Set Syntax: PHP"
+			],
+			[
+				"jquery",
+				"Set Syntax: jQuery (JavaScript)"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"snipp",
+				"Snippet: show link"
+			],
+			[
+				"Snippet: form_for",
+				"Snippet: form_for label"
+			],
+			[
+				"jqur",
+				"Set Syntax: jQuery (JavaScript)"
+			],
+			[
+				"fold",
+				"Code Folding: Unfold All"
+			],
+			[
+				"code",
+				"Code Folding: Fold Tag Attributes"
+			],
+			[
+				"package",
+				"Package Control: Discover Packages"
+			],
+			[
+				"pack",
+				"Package Control: Discover Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Discover Packages"
+			]
+		],
+		"width": 561.0
+	},
+	"console":
+	{
+		"height": 129.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": true,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/jim/Sites/birch/app/assets/stylesheets/application.css",
+		"/Users/jim/Sites/birch/config/routes.rb",
+		"/Users/jim/Sites/birch/app/assets/javascripts/application.js",
+		"/Users/jim/Sites/birch/app/views/requests/show.html.erb",
+		"/Users/jim/Sites/birch/Gemfile",
+		"/Users/jim/Sites/birch/app/models/request.rb",
+		"/Users/jim/Sites/birch/app/views/requests/index.html.erb",
+		"/Users/jim/Sites/birch/config.feelinglucky",
+		"/Users/jim/Sites/birch/config/java_opts.txt",
+		"/Users/jim/Documents/Mark14_32-42.txt",
+		"/Users/jim/Sites/birch-rails/app/assets/stylesheets/application.css",
+		"/Users/jim/Sites/birch-rails/app/views/layouts/application.html.erb",
+		"/Users/jim/Sites/birch-rails/app/views/requests/list.html.erb",
+		"/Users/jim/Sites/birch-rails/app/controllers/requests_controller.rb",
+		"/Users/jim/Sites/birch-rails/Gemfile",
+		"/Users/jim/Sites/birch-rails/config/routes.rb",
+		"/Users/jim/Sites/birch-rails/app/assets/javascripts/application.js",
+		"/Users/jim/Sites/birch-rails/app/mailers/request_vtexts.rb",
+		"/home/jim/Sites/alumni.app-server/routes/index.js",
+		"/Users/jim/Sites/birch-rails/app/mailers/request_confirmation.rb",
+		"/Users/jim/Sites/birch-rails/app/views/requests/_form.html.erb",
+		"/Users/jim/Sites/birch-rails/lib/export.rb",
+		"/Users/jim/Sites/birch-rails/app/views/requests/index.html.erb",
+		"/home/jim/Sites/rsacfod-torque/Gemfile",
+		"/home/jim/Sites/rsacfod/Gemfile",
+		"/home/jim/bin/torquebox-2.2.0/jboss/standalone/deployments/rsacfod-knob.yml",
+		"/home/jim/Sites/rsacfod-torque/app/controllers/fires_controller.rb",
+		"/home/jim/Sites/rsacfod-torque/app/views/fires/index.html.erb",
+		"/home/jim/Sites/birch/app/views/requests/show.html.erb",
+		"/home/jim/Sites/birch/app/controllers/users_controller.rb",
+		"/home/jim/Sites/birch/app/views/requests/_form.html.erb",
+		"/home/jim/Sites/birch/app/assets/javascripts/application.js",
+		"/home/jim/Sites/birch/Gemfile",
+		"/home/jim/Sites/birch/app/views/requests/index.html.erb",
+		"/home/jim/Sites/birch/config/application.rb",
+		"/home/jim/Sites/birch/lib/export.rb",
+		"/home/jim/Sites/birch/app/mailers/request_vtexts.rb",
+		"/home/jim/Sites/birch/app/mailers/request_confirmation.rb",
+		"/home/jim/Sites/birch/app/views/request_vtexts/send_confirmation.text.erb",
+		"/home/jim/Sites/rsacfod-torque/lib/tasks/209pump.rb",
+		"/home/jim/Sites/brafta-v2/ravg_metadata.php",
+		"/home/jim/Sites/brafta-v2/test_event_id.php",
+		"/tmp/.fr-poONtP/sencha-io-0.3.3/license.txt",
+		"/home/jim/nobleach.txt",
+		"/home/jim/Sites/birch/config/initializers/session_store.rb",
+		"/home/jim/Sites/birch/app/controllers/requests_controller.rb",
+		"/home/jim/Sites/birch/app/controllers/access_controller.rb",
+		"/home/jim/Sites/birch/config/environments/development.rb",
+		"/home/jim/Sites/birch/app/views/request_confirmation/send_confirmation.text.erb",
+		"/tmp/.fr-sCEqFQ/themes/green/style.css",
+		"/home/jim/Sites/birch/db/migrate/20120619191913_add_requesteddate.rb",
+		"/home/jim/Sites/birch-rails/config/database.yml",
+		"/home/jim/Sites/birch-rails/config/application.rb",
+		"/home/jim/Sites/birch-rails/config/initializers/session_store.rb",
+		"/home/jim/Sites/birch-rails/Gemfile",
+		"/home/jim/Sites/birch-rails/config/environments/production.rb",
+		"/home/jim/Sites/birch-rails/app/mailers/request_confirmation.rb",
+		"/home/jim/Sites/birch-rails/config/torquebox.yml",
+		"/tmp/.fr-ymcVnx/bin/README-service.txt",
+		"/home/jim/Sites/birch-rails/app/controllers/requests_controller.rb",
+		"/home/jim/Sites/birch-rails/app/views/requests/show.html.erb",
+		"/home/jim/Downloads/OpenELEC_PVR-ION.x86_64-devel-20120328043220-r10332/create_installstick",
+		"/home/jim/Downloads/openelec-installer/create_installstick_atv_linux.sh",
+		"/home/jim/Sites/birch-rails/lib/assets/save_incident.php",
+		"/home/jim/Sites/birch-rails/config/warble.rb",
+		"/home/jim/Sites/birch-rails/app/controllers/access_controller.rb",
+		"/home/jim/Sites/brafta-v2/includes/config.php",
+		"/home/jim/Sites/birch-rails/app/assets/javascripts/requests.js.coffee",
+		"/home/jim/Sites/birch-rails/app/views/requests/_form.html.erb",
+		"/home/jim/Sites/birch-rails/app/mailers/password_mailer.rb",
+		"/home/jim/.config/sublime-text-2/Packages/BracketHighlighter/BracketHighlighter.sublime-settings",
+		"/home/jim/Sites/birch-rails/lib/assets/get_fires.php",
+		"/home/jim/Sites/birch-rails/app/views/requests/index.html.erb",
+		"/home/jim/Sites/birch-rails/app/assets/javascripts/application.js",
+		"/home/jim/Sites/birch-rails/app/models/request.rb",
+		"/home/jim/Sites/birch-rails/config/routes.rb",
+		"/home/jim/Sites/birch-rails/app/views/request_confirmation/send_confirmation.txt.erb",
+		"/home/jim/Sites/birch-rails/lib/assets/get_fire.php",
+		"/home/jim/Sites/brafta-v2/test/time_test.php",
+		"/home/jim/Sites/birch-rails/lib/assets/fire2012074.xml",
+		"/home/jim/.gvfs/projects web folder on staging1-rsac/brafta/utilities/afmpump.log",
+		"/home/jim/Sites/birch-rails/app/models/user.rb",
+		"/home/jim/Sites/birch-rails/app/mailers/mail_completed.rb",
+		"/home/jim/Sites/birch-rails/app/controllers/users_controller.rb",
+		"/home/jim/Sites/birch-rails/public/convert.html",
+		"/home/jim/Sites/birch-rails/app/views/new_user_account/send_info.text.erb",
+		"/home/jim/Sites/birch-rails/app/views/access/login.html.erb",
+		"/home/jim/Sites/birch-rails/app/views/layouts/application.html.erb",
+		"/home/jim/Sites/birch-rails/app/mailers/new_user_account.rb",
+		"/home/jim/Sites/birch-rails/app/views/password_mailer/send_reset.text.erb",
+		"/home/jim/Sites/birch-rails/app/views/users/_userform.html.erb",
+		"/home/jim/Sites/birch-rails/db/migrate/20120313192708_add_department.rb",
+		"/home/jim/Sites/brafta-v2/save_incident.php",
+		"/home/jim/Sites/birch-rails/app/views/access/reset_password.html.erb",
+		"/home/jim/Sites/projects/app/views/layouts/pdf_template.html.erb",
+		"/home/jim/Sites/birch-rails/app/assets/javascripts/users.js.coffee",
+		"/home/jim/Sites/birch-rails/config/environments/development.rb",
+		"/home/jim/Sites/birch-rails/app/views/access/password_reset.html.erb",
+		"/home/jim/Sites/birch-rails/app/views/password_reset/send_reset.text.erb",
+		"/home/jim/Sites/birch-rails/app/views/access/forgot_password.html.erb",
+		"/home/jim/Sites/birch-rails/app/views/password_reset/send_reset.html.erb",
+		"/home/jim/Sites/isr/app/controllers/javascript_controller.rb",
+		"/home/jim/Sites/birch-rails/app/mailers/password_reset.rb",
+		"/home/jim/Sites/birch-rails/db/migrate/20120223180313_rename_reset_field.rb",
+		"/home/jim/Sites/birch-rails/db/migrate/20120223160621_add_reset_to_users.rb",
+		"/home/jim/Sites/birch-rails/app/views/users/forgot_password.html.erb",
+		"/home/jim/.config/sublime-text-2/Packages/Rails/form_for.sublime-snippet",
+		"/home/jim/Sites/birch-rails/app/views/requests/list.html.erb",
+		"/home/jim/.gvfs/projects web folder on staging1-rsac/brafta/save_incident.php",
+		"/home/jim/Sites/brafta-v2/get_incidents.php",
+		"/home/jim/Sites/brafta-v2/get_incident.php",
+		"/home/jim/SQL_Dumps/reset_admin.sql",
+		"/home/jim/Sites/isr-update/app/controllers/imagery_requests_controller.rb",
+		"/home/jim/Sites/isr-update/app/models/imagery_request.rb",
+		"/home/jim/Sites/isr-update/app/views/imagery_requests/_admin_requests.erb",
+		"/home/jim/Sites/isr-update/app/views/imagery_requests/_requests.erb",
+		"/home/jim/Sites/birch-rails/log/development.log",
+		"/home/jim/.gvfs/e$ on staging1-rsac/projects/brafta/save_incident.php",
+		"/home/jim/Sites/brafta-v2/utilities/209pump.rb",
+		"/home/jim/Sites/nirops/app/webroot/js/application.js",
+		"/home/jim/Sites/birch-rails/db/schema.rb",
+		"/home/jim/.gvfs/tomcat_webapps on staging1-rsac/projects/WEB-INF/app/controllers/projects_controller.rb",
+		"/home/jim/.gvfs/tomcat_webapps on staging1-rsac/projects/WEB-INF/config/environments/production.rb",
+		"/home/jim/.gvfs/tomcat_webapps on staging1-rsac/projects/WEB-INF/config/environment.rb",
+		"/home/jim/.gvfs/SFTP for root on muskie.gsc.wo.fs.fed.us/opt/tomcat/webapps/projects.war",
+		"/home/jim/Sites/nirops/app/webroot/js/request_form.js",
+		"/home/jim/Sites/birch-rails/db/migrate/20120202173254_addscanboxfields.rb",
+		"/home/jim/bin/vmware_images/VMware Hacks/VMware Unlocker - Mac OS X Guest/VMware 8 Series/README.txt"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"f",
+			"fires",
+			"current_year",
+			"console",
+			"$year.$incident_name",
+			"permalink\n    parent\n    source\n    report\n    save\n    reply",
+			"logos",
+			"footer",
+			"logos",
+			"<p>\n    <strong>Requested:</strong> A request has been submitted and imagery will be selected and ordered.\n  </p>",
+			"<p>",
+			">\n",
+			"http://staging1-rsac.gsc.wo.fs.fed.us/projects/brafta",
+			"birch-rails",
+			"upload-holder",
+			"kbd",
+			"bd",
+			"baer_",
+			"q",
+			"<br>",
+			"</strong>",
+			"<strong>",
+			"choose-dms-holder",
+			"bd",
+			"lat",
+			"dlat",
+			"dmat",
+			"dlat",
+			"incident-location",
+			"latlng",
+			"style=\"float:right;margin-right:12px\"",
+			"email-info",
+			"footer",
+			"shapefile",
+			"expected_containment_date",
+			"BOOGAH",
+			"brafta",
+			"incidnet",
+			"long",
+			"download_link",
+			"ne_lng",
+			"ne_lat",
+			"nw_lng",
+			"nw_lat",
+			"gmap-instructions",
+			"url(images/",
+			"java-7-openjdk-amd64",
+			"fullname",
+			"map-canvas",
+			"login-form-holder",
+			"instructions",
+			"login-form-holder",
+			"snippet",
+			"ajp",
+			"input",
+			"datepicker",
+			"bootstrap_",
+			"file_field",
+			"f.select",
+			"text_area",
+			"text_field",
+			"imagery_requests",
+			"isr_pro",
+			"ctrl+e",
+			"command",
+			"args",
+			"move_to",
+			"command",
+			"select",
+			">",
+			"copy_to_id",
+			"PostPR",
+			"FireAcres",
+			"AssessType",
+			"PostDate",
+			"PreDate",
+			"PublicationDate",
+			"$$",
+			"FireName",
+			"+",
+			"'",
+			")",
+			"fire_meta_output.write(",
+			"5",
+			"a"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"$event_id",
+			"",
+			"http://svinetfc6.fs.fed.us/brafta",
+			"http://svinetfc6.fs.fed.us/brafta/",
+			"",
+			"marker2_lng",
+			"marker2_lat",
+			"marker1_lng",
+			"marker1_lat",
+			"url(",
+			"jdk1.7.0_02",
+			"",
+			"bootstrap_file_field",
+			"f.bootstrap_select",
+			"bootstrap_text_area",
+			"bootstrap_text_field",
+			"requests",
+			"isr_dev",
+			"$post_pr",
+			"$area_burned",
+			"$assess_type",
+			"$post_date",
+			"$pre_date",
+			"$pub_date",
+			"$",
+			"$incident_name",
+			".",
+			"\"",
+			";",
+			"$metadata .="
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/controllers/requests_controller.rb",
+					"settings":
+					{
+						"buffer_size": 7233,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4619,
+								4619
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1546.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/requests/list.html.erb",
+					"settings":
+					{
+						"buffer_size": 2968,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								731,
+								731
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lib/export.rb",
+					"settings":
+					{
+						"buffer_size": 439,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								439,
+								439
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/assets/javascripts/application.js",
+					"settings":
+					{
+						"buffer_size": 4493,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								464,
+								464
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Gemfile",
+					"settings":
+					{
+						"buffer_size": 996,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								711,
+								711
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/requests/_form.html.erb",
+					"settings":
+					{
+						"buffer_size": 10334,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1264,
+								1268
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"route",
+				"config/routes.rb"
+			],
+			[
+				"list",
+				"app/views/requests/list.html.erb"
+			],
+			[
+				"_form",
+				"app/views/requests/_form.html.erb"
+			],
+			[
+				"index",
+				"app/views/requests/index.html.erb"
+			],
+			[
+				"requests",
+				"app/controllers/requests_controller.rb"
+			],
+			[
+				"session",
+				"config/initializers/session_store.rb"
+			],
+			[
+				"migra",
+				"db/migrate/20120619191913_add_requesteddate.rb"
+			],
+			[
+				"form",
+				"app/views/requests/_form.html.erb"
+			],
+			[
+				"acc",
+				"app/controllers/access_controller.rb"
+			],
+			[
+				"user",
+				"app/controllers/users_controller.rb"
+			],
+			[
+				"gemfi",
+				"Gemfile"
+			],
+			[
+				"export",
+				"lib/export.rb"
+			],
+			[
+				"reque",
+				"spec/models/request_spec.rb"
+			],
+			[
+				"app",
+				"config/application.rb"
+			],
+			[
+				"imagery",
+				"app/controllers/imagery_requests_controller.rb"
+			],
+			[
+				"mail",
+				"lib/setup_mail.rb"
+			],
+			[
+				"dl",
+				"/home/jim/Sites/brafta-v2/dl_csv.php"
+			],
+			[
+				"grid",
+				"/home/jim/Sites/brafta-v2/grid.php"
+			],
+			[
+				"style",
+				"/home/jim/Sites/afm_graphs/css/style.css"
+			],
+			[
+				"plot",
+				"/home/jim/Sites/afm_graphs/plot_dispatch.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/home/jim/Sites/isr/isr.sublime-project"
+			],
+			[
+				"pro",
+				"/home/jim/Sites/projects/project.sublime-project"
+			],
+			[
+				"bra",
+				"/home/jim/Sites/brafta-v2/brafta.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 223.0,
+	"status_bar_visible": true
+}

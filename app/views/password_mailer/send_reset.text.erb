@@ -1,0 +1,10 @@
+You are receiving this email because you recently requested to reset your password for the BAER Imagery Support - BARC Request Page.
+
+Your username is: <%= @user.username %>
+
+Please follow the link below to reset your password:
+<%= reset_url(@user.reactivation_code, :host => @url) %>
+
+We apologize if you received this email in error.
+
+-The BAER Imagery Support Team

@@ -1,0 +1,25 @@
+<%= link_to 'Create new user', {:contoller => 'users', :action => 'new'}, :class => 'button' %>
+<table id="users">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Full Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |u| %>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <td><%= u.username %></td>
+        <td><%= u.full_name %></td>
+        <td></td>
+        <td></td>
+        <td><%= link_to 'Edit', {:controller => 'users', :action => 'edit', :id => u.id} %></td>
+        <td><%= link_to 'Delete', {:controller => 'users', :action => 'delete', :id => u.id}, :class => 'delete', :id => u.id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

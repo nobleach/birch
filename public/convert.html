@@ -1,0 +1,121 @@
+<script type="text/javascript" language="javascript"><!--
+   var latsign = 1;
+   var lonsign = 1;
+   var absdlat = 0;
+   var absdlon = 0;
+   var absmlat = 0;
+   var absmlon = 0;
+   var absslat = 0;
+   var absslon = 0;
+--></script>
+
+<form method="POST" name="form10" enctype="application/x-www-form-urlencoded ">
+
+<table summary="" border="0"  width='610' cellpadding='7' bgcolor='#FECBAF'>
+
+<tr><td class="bodytext">
+<label class="bodytext" for="DMSlat"><nobr>Enter Degrees Minutes Seconds latitude:&nbsp;&nbsp;</nobr></label></td>
+<td class="bodytext">
+
+<nobr>
+<input name="dlat" type="INT" size=4 value="" maxlength="4" id="DMSlat" style="font-size: 12pt" tabindex="1" onBlur="
+
+
+      if(form10.dlat.value < 0)  { latsign = -1; }
+      absdlat = Math.abs( Math.round(form10.dlat.value * 1000000.));
+
+	 //Math.round is used to eliminate the small error caused by rounding in the computer:
+	 //e.g. 0.2 is not the same as 0.20000000000284
+
+     //Error checks
+     if(absdlat > (90 * 1000000)) { alert(' Degrees Latitude must be in the range of -90 to 90. '); form10.dlat.value = '';  form10.dlat.value=''; form10.mlat.value=''; }
+
+">&nbsp;<input name="mlat" type="INT" size="4" value="" maxlength="2" id="DMSlat" style="font-size: 12pt" tabindex="2" onBlur="
+
+    form10.mlat.value = Math.abs(Math.round(form10.mlat.value * 1000000.)/1000000);  //integer
+    absmlat = Math.abs(Math.round(form10.mlat.value * 1000000.));  //integer
+
+     //Error checks
+     if(absmlat >= (60 * 1000000)) {  alert(' Minutes Latitude must be in the range of 0 to 59. ');   form10.mlat.value=''; form10.slat.value=''; }
+
+
+ ">&nbsp;<input name="slat" type="INT" size=6 value="" maxlength="6" id="DMSlat" style="font-size: 12pt" tabindex="3" onBlur="
+
+     form10.slat.value = Math.abs(Math.round(form10.slat.value * 1000000.)/1000000);
+     absslat = Math.abs(Math.round(form10.slat.value * 1000000.));         // Note: kept as big integer for now, even if submitted as decimal
+
+     //Error checks
+     if(absslat > (59.99999999 * 1000000)) {  alert(' Minutes Latitude must be 0 or greater \n and less than 60. ');   form10.slat.value=''; }
+
+"></nobr></td></tr>
+
+
+
+
+<tr><td class="bodytext">
+<label class="bodytext" for="DMSlon"><nobr>Enter Degrees Minutes Seconds longitude:&nbsp;&nbsp;</nobr></label></td>
+<td class="bodytext">
+<nobr>
+<input name="dlon" type="INT" size=4 value="" maxlength="4" id="DMSlon" style="font-size: 12pt" tabindex="4" onBlur="
+
+      if(form10.dlon.value < 0)  { lonsign = -1; }
+      absdlon = Math.abs( Math.round(form10.dlon.value * 1000000.));
+
+	 //Math.round is used to eliminate the small error caused by rounding in the computer:
+	 //e.g. 0.2 is not the same as 0.20000000000284
+
+     //Error checks
+     if(absdlon > (180 * 1000000)) {  alert(' Degrees Longitude must be in the range of -180 to 180. '); form10.dlon.value=''; form10.mlon.value='';}
+
+
+
+">&nbsp;<input name="mlon" type="INT" size="4" value="" maxlength="2" id="DMSlon" style="font-size: 12pt" tabindex="5" onBlur="
+
+     form10.mlon.value = Math.abs(Math.round(form10.mlon.value * 1000000.)/1000000);  //integer
+     absmlon = Math.abs(Math.round(form10.mlon.value * 1000000));  //integer
+     //Error checks
+     if(absmlon >= (60 * 1000000))   {  alert(' Minutes Longitude must be in the range of 0 to 59. ');   form10.mlon.value=''; form10.slon.value=''; }
+
+
+ ">&nbsp;<input name="slon" type="INT" size=6 value="" maxlength="6" id="DMSlon" style="font-size: 12pt" tabindex="6" onBlur="
+
+     form10.slon.value = Math.abs(Math.round(form10.slon.value * 1000000.)/1000000);
+     absslon = Math.abs(Math.round(form10.slon.value * 1000000.));         // Note: kept as big integer for now, even if submitted as decimal
+
+     //Error checks
+     if(absslon > (59.99999999 * 1000000)) {  alert(' Minutes Latitude must be 0 or greater \n and less than 60. ');   form10.slon.value=''; }
+
+"></nobr></td></tr>
+
+<tr><td colspan=2 align="center">
+
+<input name="submit" type="BUTTON" size="37" tabindex="7"
+style="background-color: #DDEFFF;"   value = '  Convert to Decimal  '
+onClick ="
+
+     form10.alat.value = Math.round(absdlat + (absmlat/60.) + (absslat/3600.) ) * latsign/1000000;
+     form10.alon.value = Math.round(absdlon + (absmlon/60) + (absslon/3600) ) * lonsign/1000000;
+	 latsign=1;
+	 lonsign=1;
+
+">&nbsp; &nbsp;<input type="reset" value="Clear Values"  tabindex ="8" onClick="
+
+form10.reset;
+absdlat=0;
+absdlon=0;
+absmlat=0;
+absmlon=0;
+absslat=0;
+absslon=0;
+form10.alat.value=0;
+form10.alon.value=0;
+
+"></td></tr>
+
+<tr><td colspan=2 align="right"> <nobr><b class='bodytextbold'>Results:</b>&nbsp; Latitude:
+<input name="alat" type="INT" size=17 value="" maxlength="17" id="alat" style="font-size: 12pt; background-color: #EEEEAB" tabindex='9'>&nbsp; Longitude:
+<input name="alon" type="INT" size=17 value="" maxlength="17" id="alon" style="font-size: 12pt; background-color: #EEEEAB" tabindex='10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</nobr>
+
+</td></tr></table>
+
+</form>

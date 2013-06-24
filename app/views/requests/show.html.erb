@@ -1,0 +1,33 @@
+<img id="static-map" src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @request.lat %>,<%= @request.lng %>&zoom=8&size=300x300&maptype=terrain
+&markers=color:red%7Ccolor:red%7C<%= @request.lat %>,<%= @request.lng %>&sensor=false" alt="">
+<div id="show-stats">
+  <strong>Fire Name: </strong> <%= @request.incident_name %><br>
+  <strong>Forest: </strong> <%= @request.forest_name %><br>
+  <strong>Department: </strong> <%= @request.department %><br>
+  <strong>Acres: </strong> <%= @request.acres %><br>
+  <strong>Ignition Date: </strong> <%= @request.ignition_date %><br>
+  <strong>Percent Contained: </strong> <%= @request.percent_contained %><br>
+  <strong>Expected Containment Date: </strong> <%= @request.expected_containment_date %><br>
+  <div id="location">
+    <strong>Latitude: </strong><%= @request.lat %><br>
+    <strong>Longitude: </strong><%= @request.lng %><br>
+  </div>
+  <% if session[:username] == 'admin' %>
+    <strong>Shapefile: </strong><%= @request.upload.html_safe %><br>
+  <% end %>
+  <strong>BAER Assessment Start Date: </strong><%= @request.assessment_start_date %><br>
+  <strong>BAER Team Leader: </strong><%= @request.team_leader %><br>
+  <strong>Request Date: </strong><%= @request.created_at %><br>
+  <strong>Request Status: </strong><%= @request.status %><br>
+  <%
+    year_folder = @request.expected_containment_date.strftime("%Y") unless @request.expected_containment_date.nil?
+    file_name = @request.incident_name.titleize.gsub(' ','').to_s + '.tar.gz'
+  %>
+  <% if @request.status == 'Carl is sleeping' %>
+
+    <a class="download_link" href="http://activefiremaps.fs.fed.us/baer/download/<%= year_folder %>/<%= file_name %>">
+      <%= image_tag('bundle.png', :style => 'vertical-align:middle') %>
+      Download Data Bundle
+    </a>
+  <% end %>
+</div>

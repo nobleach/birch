@@ -1,0 +1,2 @@
+
+  JAVA_OPTS: -Xrs -client -Dprogram.name=standalone.bat -Xms64M -Xmx512M -XX:MaxPermSize=256M -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djava.net.preferIPv4Stack=true -Dorg.jboss.resolver.warning=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djboss.server.default.config=standalone.xml -Xss2048k -Djruby.compile.invokedynamic=true -Dorg.quartz.scheduler.skipUpdateCheck=true

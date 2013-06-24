@@ -1,0 +1,10 @@
+{
+    "css": [
+        "style.css"
+    ],
+    "sass": [],
+    "js": [
+        "index.js"
+    ],
+    "coffee": []
+}

@@ -1,0 +1,139 @@
+<p class="instructions">
+  To submit a BAER support request or to check on the status of an existing request please select the incident from the map or the dropdown list. You can also browse existing requests from the <%= link_to 'Request Queue', {:action => 'list'} %>
+  <br>
+  Don’t see your incident?
+  <%= link_to('Create Blank Request', {:controller => 'requests', :action => 'new'}, :class => 'button', :style => 'margin-bottom:7px') %>
+</p>
+<div id="select-holder"></div>
+<div id="map-canvas" ></div>
+<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8">
+  //<![CDATA[
+  ////////////////////// Let's all just hate on IE right here, right now:
+  if (!Array.prototype.indexOf) {
+    Array.prototype.indexOf = function(elt /*, from*/) {
+        var len = this.length;
+
+        var from = Number(arguments[1]) || 0;
+        from = (from < 0) ? Math.ceil(from)
+        : Math.floor(from);
+        if (from < 0)
+            from += len;
+
+        for (; from < len; from++) {
+            if (from in this &&
+                this[from] === elt)
+                return from;
+        }
+        return -1;
+    };
+  }
+  ///////////// Technically, this one isn't their fault
+  Array.prototype.merge = function(/* variable number of arrays */){
+    for(var i = 0; i < arguments.length; i++){
+      var array = arguments[i];
+      for(var j = 0; j < array.length; j++){
+        if(this.indexOf(array[j]) === -1) {
+            this.push(array[j]);
+        }
+      }
+    }
+    return this;
+  };
+
+  ///////////////////// Ok, we can now return to coding for the rest of the world.
+    var map;
+    var infowindow;
+    var us_center = new google.maps.LatLng(39.8106,-98.556);
+    function gload() {
+      var myOptions = {
+        zoom: 4,
+        center: us_center,
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+      };
+      map = new google.maps.Map(document.getElementById('map-canvas'), myOptions);
+      map.setTilt(0);
+      displayConus();
+    }
+
+    function compare(a,b) {
+      if (a.incident_name < b.incident_name)
+         return -1;
+      if (a.incident_name > b.incident_name)
+        return 1;
+      return 0;
+    }
+
+    function displayConus() {
+      // var serviceUrl = 'http://staging1-rsac.gsc.wo.fs.fed.us/projects/brafta/get_incidents.php?callback=?';
+      var serviceUrl = 'http://activefiremaps.fs.fed.us/m/get_fires.php?callback=?';
+      var select_html = '<select id="choose-incident"><option>Select...</option>';
+      var requests = [];
+      var requested_url = "<%= url_for(:controller => 'requests', :action => 'requested') %>";
+      $.getJSON(requested_url, function(data) {
+          requests = data;
+          // now we'll get all large fires from Active Fire Maps
+          $.getJSON(serviceUrl, function(json) {
+            var bounds = new google.maps.LatLngBounds();
+            $.merge(json,requests);
+            json = json.sort(compare);
+            // console.log(json);
+            $.each(json, function(i, incident) {
+              var incident_name = incident.incident_name;
+              var incident_id = incident.incident_id;
+              var status = incident.status;
+              if(status == 'Requested') {
+                select_html +='<option style="color:#aaa" value="' + incident_id + '">' + incident_name + ' - (Requested)</option>';
+              } else {
+                select_html +='<option value="' + incident_id + '">' + incident_name + '</option>';
+              }
+              var point = new google.maps.LatLng(parseFloat(incident.lat),parseFloat(incident.lng));
+              var marker = createMarker(point, incident_name, incident_id, status);
+              bounds.extend(point);
+              if(json !== null) {
+                fitMap();
+              }
+            });
+            //private method to fit map to div
+            function fitMap() {
+              if(map.zoom > 4) {
+                map.fitBounds(bounds);
+              }
+            }
+            select_html += '</select>';
+            $('#select-holder').html(select_html);
+            $('#select-holder select').live('change', function(e) {
+              var url = "<%= url_for(:controller => 'requests', :action => 'new') %>" + '?incident_id=' + $(this).val();
+              window.location.href = url;
+            });
+          });
+      });
+    }
+
+    function createMarker(point, incident_name, incident_id, status) {
+      var marker = new google.maps.Marker({
+              position: point,
+              map: map,
+              icon: 'notrequested.png'
+            })
+      if(status == 'Requested') {
+        marker.setIcon('requested.png');
+      }
+      var tracking_html = '<%= image_tag('red_circle.png', :style => 'vertical-align:middle').html_safe %> Requested';
+      var html = '<p><b>' + incident_name + '</b> <br/>' + incident_id + '</p>';
+      if(status == 'Requested') {
+        html += tracking_html;
+      }
+      html += '<a href="<%= url_for(:controller => 'requests', :action => 'new') %>?incident_id=' + incident_id + '" style="margin-left:7px">Create Request</a>';
+      google.maps.event.addListener(marker, 'click', function() {
+        if (infowindow) infowindow.close();
+        infowindow = new google.maps.InfoWindow({
+          content: html
+        })
+        infowindow.open(map, marker);
+      });
+      return marker;
+    }
+    gload();
+  //]]>
+</script>

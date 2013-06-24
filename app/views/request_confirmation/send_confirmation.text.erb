@@ -1,0 +1,24 @@
+A new request has been added to the BIRCH online request application.
+
+The Requestor's information is as follows:
+Requestor Name: <%= @request.requestor_name %>
+Requestor Phone: <%= @request.requestor_phone %>
+Requestor Email: <%= @request.requestor_email %>
+
+The Incident's information is as follows:
+Incident Name: <%= @request.incident_name %> 
+Forest:  <%= @request.forest_name %>
+Acres:  <%= @request.acres %>
+Ignition Date:  <%= @request.ignition_date %>
+Percent Contained:  <%= @request.percent_contained %>
+Expected Containment Date:  <%= @request.expected_containment_date %>
+Latitude: <%= @request.lat %>
+Longitude: <%= @request.lng %>
+
+BAER Assesment Start Date: <%= @request.assessment_start_date %>
+BAER Team Leader: <%= @request.team_leader %>
+Request Date: <%= @request.created_at %>
+
+
+You may check on the progress of this request by visiting the BARC Imagery Request page.
+http://svinetfc6.fs.fed.us/birch/requests/list

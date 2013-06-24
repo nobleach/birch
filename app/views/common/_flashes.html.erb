@@ -1,0 +1,26 @@
+<% unless flash[:notice].blank? %>
+  <div class="ui-widget">
+    <div style="margin:20px; padding: 1px .7em;" class="ui-state-highlight ui-corner-all"> 
+      <p><span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-info"></span> 
+      <%= content_tag :span, flash[:notice] %>
+    </div>
+  </div>
+<% end %>
+
+<% unless flash[:error].blank? %>
+  <div class="ui-widget">
+    <div style="margin:20px; padding: 1px .7em;" class="ui-state-error ui-corner-all"> 
+      <p><span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span> 
+      <%= content_tag :span, flash[:error] %>
+    </div>
+  </div>
+<% end %>
+
+<% unless flash[:alert].blank? %>
+  <div class="ui-widget">
+    <div style="margin:20px; padding: 1px .7em;" class="ui-state-highlight ui-corner-all"> 
+      <p><span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-info"></span> 
+      <%= content_tag :span, flash[:alert] %>
+    </div>
+  </div>
+<% end %>

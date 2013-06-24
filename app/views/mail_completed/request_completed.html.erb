@@ -1,0 +1,7 @@
+<p>Your request for imagery/mapping of the incident known as <%= @request.incident_name %> has been completed. </p>
+<p>You may download the data bundle at the address below:</p>
+<% 
+    year_folder = @request.expected_containment_date.strftime("%Y")
+    file_name = @request.incident_name.titleize.gsub!(/ /,'') + '.tar.gz'
+  %>
+  <a href="http://activefiremaps.fs.fed.us/baer/download/<%= year_folder %>/<%= file_name %>">Download Data Bundle</a>

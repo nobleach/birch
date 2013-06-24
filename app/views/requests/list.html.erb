@@ -1,0 +1,76 @@
+<p class="instructions" style="margin-bottom:12px">
+  You may only edit requests that you have created.
+</p>
+<form action="<%= url_for(:action => 'list') %>" method="GET" id="sorter">
+  <div id="filter">
+    <label for="status-sort">Only show:</label>
+    <select id="status-sort" name="status">
+      <option value=""></option>
+      <option value="all">All</option>
+      <option value="Requested">Requested</option>
+      <option value="Processing">Processing</option>
+      <option value="Complete">Complete</option>
+      <option value="Unable to fill">Unable to fill</option>
+    </select>
+    <% current_year = Time.now.year.to_i %>
+    <label for="year">Year</label>
+    <select name="year" id="year">
+      <option value=""></option>
+      <% current_year.downto(2011).each do |year| %>
+      <option value="<%= year %>"><%= year %></option>
+      <% end %>
+    </select>
+    <input type="submit" name="submit" id="query_submit" value="Filter">
+  </form>
+  </div>
+<% unless session[:username].nil? %>
+  <%= link_to('Create Blank Request', {:controller => 'requests', :action => 'new'}, :class => 'button', :style => 'margin-bottom:7px') %>
+<% end %>
+<% if session[:username] == 'admin' %>
+  <%= link_to('Download CSV', params.merge(:format => :csv), :class => 'button', :style => 'margin-bottom:7px') %>
+<% end %>
+<table id="requests" class="tablesorter">
+  <thead>
+    <tr>
+      <th>Incident Name</th>
+      <th>Administrative Unit</th>
+      <th>Supporting Agency</th>
+      <th>BAER Assessment Start Date</th>
+      <th>Requested Date</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @requests.each do |r| %>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <td><%= r.incident_name %></td>
+        <td><%= r.forest_name %></td>
+        <td><%= r.supporting_agency %></td>
+        <td><%= r.assessment_start_date %></td>
+        <td><%= r.requested_date %></td>
+        <td class="status"><%= r.status %></td>
+        <td><%= link_to 'Show', {:controller => 'requests', :action => 'show', :id => r.id} %></td>
+        <td><%= link_to 'Edit', {:controller => 'requests', :action => 'edit', :id => r.id} if r.username == session[:username] or session[:username] == 'admin' %></td>
+        <td><%= link_to('Delete', {:controller => 'requests', :action => 'delete', :id => r.id}, :class => 'delete') if session[:username] == 'admin' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="infowindow">
+  <h4>Status Key:</h4>
+  <p>
+    <strong>Requested:</strong> A request has been submitted and imagery will be selected and ordered.
+  </p>
+  <p>
+    <strong>Processing:</strong> Imagery has been obtained and is being processed.
+  </p>
+  <p>
+    <strong>Complete:</strong> BARC products have been produced and are ready for download. Go to the 'Show' page to download the data bundle.
+  </p>
+  <p>
+    <strong>Unable to Fill: </strong>Request could not be completed
+  </p>
+</div>

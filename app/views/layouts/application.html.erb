@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Barc Maps and Imagery Requests</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <%= link_to image_tag('BARCMaps.png', :id => 'barc-logo'), {:controller => 'requests', :action => 'index'} %>
+  </div><!-- end of header -->
+  <div id="menu-holder">
+    <ul id="menu">
+      <li><%= link_to 'Incident Map', {:controller => 'requests', :action => 'index'} %></li>
+      <li><%= link_to 'Request Queue', {:controller => 'requests', :action => 'list'} %></li>
+      <% if session[:user_id]  %>
+        <li><%= link_to 'Logout', {:controller => 'access', :action => 'logout'} %></li>
+      <% else %>
+        <li><%= link_to 'Login', {:controller => 'access', :action => 'login'} %></li>
+      <% end %>
+      <% if session[:username] == 'admin'  %>
+        <li><%= link_to 'User Administration', {:controller => 'users', :action => 'index'} %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div id="main">
+    <%= render :partial => 'common/flashes' %>
+    <%= yield %>
+  </div><!-- endo of main -->
+
+  <div id="footer">
+    <p>
+      Having trouble? If your request is related to a US Forest Service fire 
+      contact Carl Albury at
+      <a href="mailto:calbury@fs.fed.us">calbury@fs.fed.us</a>. 
+      If your request is related to a 
+      Dept. of Interior fire contact Randy McKinley at 
+      <a href="mailto:rmckinley@usgs.gov">rmckinley@usgs.gov</a>. 
+      If your request is not related to an active BAER incident please send 
+      an email to 
+      <a href="mailto:BAERimagery@fs.fed.us">BAERimagery@fs.fed.us</a>
+    </p>
+    <%= image_tag('logos.png', :id => 'logos') %>
+  </div><!-- end of footer -->
+</div> <!-- end of #container -->
+<div id="dialog-confirm" title="Delete?">
+  <p>
+    <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+    <span id="dialog-body"></span>
+  </p>
+</div>
+</body>
+</html>

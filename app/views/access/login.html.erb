@@ -1,0 +1,13 @@
+
+<div id="login-form-holder">
+<h3 class="instructions">You must login to use this system</h3>
+  <form action=<%= url_for(:controller =>'access', :action =>'attempt_login') %> class="">
+    <label for="username">Username </label>
+    <input type="text" id="username" name="username" value="" /> <br>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" />
+    <%= link_to 'I forgot my password', {:controller => 'access', :action => 'forgot_password'} %><br>
+    <input type="submit" id="login-submit" name="login-submit" value="Login" class="button" />
+  </form>
+  <%= link_to 'Or create an account', {:controller => 'users', :action => 'new'} %>
+</div>

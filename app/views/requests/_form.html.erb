@@ -1,0 +1,287 @@
+<% if @request.errors.any? %>
+  <div class="ui-widget">
+    <div style="margin:20px; padding: 1px .7em;" class="ui-state-error ui-corner-all">
+      <p><span style="float: left; margin-right: .3em;" class="ui-icon ui-icon-alert"></span>
+      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+      <ul>
+        <% @request.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+<%= form_for(@request, :html => {:multipart => true, :id => 'request_form', :class => ''}) do |f| %>
+  <%= link_to('Send To BRAFTA', {:controller => 'requests', :action => 'brafta_update', :id => @request.id}, :class => 'button', :style => 'margin-bottom:7px') if session[:username] == 'admin' %>
+  <fieldset>
+    <legend>Incident Information</legend>
+    <%= f.hidden_field :username %>
+    <%= f.label(:incident_name) %>
+    <%= f.text_field(:incident_name, :class => '') %>
+    <%= f.label(:incident_id, 'Incident ID') %>
+    <%= f.text_field(:incident_id, :class => '') %>
+    <%= f.label(:forest_name, 'Agency') %>
+    <%= f.text_field(:forest_name) %>
+    <%= f.label(:acres) %>
+    <%= f.text_field(:acres) %>
+    <%= f.label(:ignition_date) %>
+    <%= f.text_field(:ignition_date, :class => 'datepicker') %>
+    <%= f.label(:percent_contained) %>
+    <%= f.text_field(:percent_contained) %>
+    <%= f.label(:expected_containment_date) %>
+    <%= f.text_field(:expected_containment_date, :class => 'datepicker') %>
+  </fieldset>
+  <fieldset>
+    <legend>Incident Location</legend>
+    <div id="incident-location">
+      <button id="gmaps-picker" class="button">Add by Google Maps</button>
+      <button id="upload-shapefile" class="button">Upload ESRI Shapefile</button><span> zip or tar.gz file.</span>
+      <div id="latlng">
+        <div id="decimal-inputs">
+          <%= f.label :lat, "Lat" %>
+          <%= f.text_field :lat %><br>
+          <%= f.label :lng, "Long" %>
+          <%= f.text_field :lng %>
+        </div>
+        <div id="choose-dms-holder">
+          -OR-
+          <button id="choose-dms" class="button">Enter Coordinates in DMS</button>
+        </div>
+        <div id="dms-inputs">
+          <label for="dlat">Enter Degrees Minutes Seconds latitude </label>
+          <input type="text" name="dlat" id="dlat" width="">
+          <input type="text" name="mlat" id="mlat" width="">
+          <input type="text" name="slat" id="slat" width="">
+          <button id="convert-to-decimal" class="button">Convert</button>
+          <br>
+          <label for="dlon">Enter Degrees Minutes Seconds longitude </label>
+          <input type="text" name="dlon" id="dlon" width="">
+          <input type="text" name="mlon" id="mlon" width="">
+          <input type="text" name="slon" id="slon" width="">
+          <button id="convert-cancel" class="button">Cancel</button>
+        </div>
+        <div id="upload-holder">
+          <%= f.label :shapefile, "Shapefile" %>
+          <%= f.file_field :shapefile %>
+          <button id="upload-cancel" class="button">Cancel</button>
+        </div>
+      </div>
+      <div id="gmap-instructions" class="invisible">
+        <p>
+          Pan and zoom the map to find the general area of the incident's
+          ignition point. Double-click to add a scanbox.
+        </p>
+      </div>
+      <div id="bd" class="invisible" style="position:relative;">
+
+        <div id="gmap" style="width: 100%;height: 300px;"></div>
+        <div id="marker-coordinates">
+          <%= f.label :marker1_lat, "Marker 1 Lat" %>
+          <%= f.text_field :marker1_lat %>
+          <%= f.label :marker2_lat, "Marker 2 Lat" %>
+          <%= f.text_field :marker2_lat %>
+          <br>
+          <%= f.label :marker1_lng, "Marker 1 Lng" %>
+          <%= f.text_field :marker1_lng %>
+          <%= f.label :marker2_lng, "Marker 2 Lng" %>
+          <%= f.text_field :marker2_lng %>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>BAER Team and Data Delivery Information</legend>
+    <%= f.label :assessment_start_date, "BAER Assessment Start Date" %>
+    <%= f.text_field :assessment_start_date, :class => 'datepicker' %>
+    <%= f.label :department, "Department" %>
+    <%= f.select(:department, ['Select...', 'Forest Service', 'Dept of Interior', 'Other']) %>
+    <%= f.label :team_leader, "BAER Team Leader Name" %>
+    <%= f.text_field :team_leader %>
+    <%= f.label :requestor_name %>
+    <%= f.text_field :requestor_name %>
+    <%= f.label :requestor_email %>
+    <%= f.text_field :requestor_email %>
+    <%= f.label :requestor_phone %>
+    <%= f.text_field :requestor_phone %>
+    <br>
+    <%= f.label :comments %>
+    <%= f.text_area :comments %> <br>
+    <% if session[:username] == 'admin' %>
+      <%= f.label :supporting_agency, "Supporting Agency" %>
+      <%= f.select(:supporting_agency, [
+            'Select...',
+            'USGS-EROS',
+            'USFS-RSAC'
+            ])
+      %>
+      <br>
+      <%= f.label :status %>
+      <%= f.select(:status, [
+          'Requested',
+          'Processing',
+          'Complete',
+          'Unable to fill'])
+      %>
+    <% end %>
+  </fieldset>
+  <fieldset id="button-holder">
+    <%= f.submit "Submit", :disable_with => 'Submiting...', :class => 'button' %>
+    <%= link_to('Cancel', {:controller => 'requests', :action => 'list'}, :class => 'button', :style => 'height:30px') %>
+  </fieldset>
+<% end %>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+// Global variables... yicky!
+var map;
+var marker1;
+var marker2;
+var center_marker;
+var rectangle;
+var center_lat = parseFloat($("#request_lat").val());
+var center_lng = parseFloat($("#request_lng").val());
+var marker1_lat = parseFloat($("#request_marker1_lat").val()) || center_lat +0.03;
+var marker1_lng = parseFloat($("#request_marker1_lng").val()) || center_lng -0.03;
+var marker2_lat = parseFloat($("#request_marker2_lat").val()) || center_lat -0.03;
+var marker2_lng = parseFloat($("#request_marker2_lng").val()) || center_lng +0.03;
+
+$('#gmaps-picker').click(function(e) {
+  e.preventDefault();
+  if($("#request_lat").val() == '' || $("#request_lat").val() == '') {
+    setInitialPoint();
+  } else {
+    init();
+  }
+  $('#bd').slideToggle();
+  $("#gmap-instructions").toggle();
+});
+
+function roundNumber(num, dec) {
+  var result = Math.round(num*Math.pow(10,dec))/Math.pow(10,dec);
+  return result;
+}
+
+
+/**
+ * Allow user to set an intial point if none is provided.
+ */
+function setInitialPoint() {
+  var us_center = new google.maps.LatLng(39.8106,-98.556);
+  map = new google.maps.Map(document.getElementById('gmap'), {
+    'zoom': 3,
+    'center':us_center,
+    'mapTypeId':google.maps.MapTypeId.TERRAIN
+  });
+  google.maps.event.addListener(map, 'dblclick', function(event) {
+    placeMarker(event.latLng);
+  });
+  //private method to place a marker
+  function placeMarker(location) {
+    var marker = new google.maps.Marker({
+      position: location,
+      map: map
+    });
+    center_lat = location.lat();
+    center_lng = location.lng();
+    marker1_lat = center_lat +0.03;
+    marker1_lng = center_lng -0.03;
+    marker2_lat = center_lat -0.03;
+    marker2_lng = center_lng +0.03;
+    $("#request_lat").val(roundNumber(center_lat,3));
+    $("#request_lng").val(roundNumber(center_lng,3));
+    init();
+  }
+}
+
+
+
+/**
+ * Called on the on Google Maps button push, if lat/long are provided.
+ */
+function init() {
+  map = new google.maps.Map(document.getElementById('gmap'), {
+    'zoom': 10,
+    'center': new google.maps.LatLng(center_lat, center_lng),
+    'mapTypeId': google.maps.MapTypeId.TERRAIN
+  });
+
+  // Plot two markers to represent the Rectangle's bounds.
+  marker1 = new google.maps.Marker({
+    map: map,
+    position: new google.maps.LatLng(marker1_lat, marker1_lng),
+    draggable: true,
+    title: 'Drag me!'
+  });
+  marker2 = new google.maps.Marker({
+    map: map,
+    position: new google.maps.LatLng(marker2_lat, marker2_lng),
+    draggable: true,
+    title: 'Drag me!'
+  });
+  center_marker = new google.maps.Marker({
+    map: map,
+    position: new google.maps.LatLng(center_lat, center_lng),
+    draggable: false,
+    title: 'Fire Center'
+  });
+
+  // Allow user to drag each marker to resize the size of the Rectangle.
+  google.maps.event.addListener(marker1, 'drag', redraw);
+  google.maps.event.addListener(marker2, 'drag', redraw);
+  //google.maps.event.addListener(center_marker, 'drag', moveRect);
+  google.maps.event.addListener(center_marker, 'drag', function(event) {
+    var ig_point = center_marker.getPosition();
+    var lat = roundNumber(ig_point.lat(),3);
+    var lng = roundNumber(ig_point.lng(),3);
+    $("#request_lat").val(lat);
+    $("#request_lng").val(lng);
+  });
+
+  // Create a new Rectangle overlay and place it on the map.  Size
+  // will be determined by the LatLngBounds based on the two Marker
+  // positions.
+  rectangle = new google.maps.Rectangle({
+    map: map
+  });
+  redraw();
+}
+
+/**
+ * Updates the Rectangle's bounds to resize its dimensions.
+ */
+function redraw() {
+  var scan1 = marker1.getPosition();
+  var scan2 = marker2.getPosition();
+  var latLngBounds = new google.maps.LatLngBounds(
+    scan1,
+    scan2
+  );
+  //set form fields to positions
+  var lat1 = roundNumber(scan1.lat(),3);
+  var lng1 = roundNumber(scan1.lng(),3);
+  var lat2 = roundNumber(scan2.lat(),3);
+  var lng2 = roundNumber(scan2.lng(),3);
+  $("#request_marker1_lat").val(lat1);
+  $("#request_marker1_lng").val(lng1);
+  $("#request_marker2_lat").val(lat2);
+  $("#request_marker2_lng").val(lng2);
+
+  rectangle.setBounds(latLngBounds);
+  center_lat = rectangle.getBounds().getCenter().lat();
+  center_lng = rectangle.getBounds().getCenter().lng();
+  center_marker.setPosition(
+    new google.maps.LatLng(center_lat, center_lng)
+  );
+  $("#request_lat").val(roundNumber(center_lat,3));
+  $("#request_lng").val(roundNumber(center_lng,3));
+}
+
+// $("#request_form").submit(function() {
+//   var incident_id = $("#request_incident_id").val();
+//   var baer_status = $("#request_status").val();
+//   var url = 'http://staging1-rsac.gsc.wo.fs.fed.us/projects/brafta/save_incident.php';
+//   $.post('http://localhost/~jim/brafta-v2/save_incident.php', {incident_id:incident_id, baer_status:baer_status});
+//   return false;
+// });
+
+</script>
