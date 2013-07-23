@@ -4,7 +4,7 @@ class Request < ActiveRecord::Base
     :shapefile_file_size, :lat, :lng, :assessment_start_date, :desired_delivery_date,
     :team_leader, :requestor_name, :requestor_email, :requestor_phone, :comments,
     :username, :status, :marker1_lat, :marker1_lng, :marker2_lat, :marker2_lng,
-    :department, :requested_date, :supporting_agency
+    :department, :requested_date, :supporting_agency, :shapefile
 
   prefix = ENV['RAILS_RELATIVE_URL_ROOT']
   #add paperclip for file upload:
