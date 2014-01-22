@@ -75,9 +75,10 @@ class RequestsController < ApplicationController
         @request.lng = json['ig_long']
         @request.status = json['baer_status']
       else
-        url = URI.parse('http://activefiremaps.fs.fed.us/m/get_fire.php')
-        response = Net::HTTP.post_form(url,{'incident_id' => params['incident_id']})
-        json = ActiveSupport::JSON.decode(response.body)
+        url = URI.parse("http://activefiremaps.fs.fed.us/m/get_fire.php?incident_id=#{params['incident_id']}")
+        response = Net::HTTP.get_response(url)
+        clean_response = response.body.gsub(/[()]/, "")
+        json = ActiveSupport::JSON.decode(clean_response)
         @request.incident_name = json['incident_name']
         @request.incident_id = json['incident_id']
         @request.acres = json['area_burned']
