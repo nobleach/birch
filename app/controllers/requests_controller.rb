@@ -77,7 +77,7 @@ class RequestsController < ApplicationController
       else
         url = URI.parse("http://activefiremaps.fs.fed.us/m/get_fire.php?incident_id=#{params['incident_id']}")
         response = Net::HTTP.get_response(url)
-        clean_response = response.body.gsub(/[()]/, "")
+        clean_response = response.body.gsub(/[;()]/, "")
         json = ActiveSupport::JSON.decode(clean_response)
         @request.incident_name = json['incident_name']
         @request.incident_id = json['incident_id']
